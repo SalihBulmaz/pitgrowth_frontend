@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--
+Template Name: NobleUI - HTML Bootstrap 5 Admin Dashboard Template
+Author: NobleUI
+Website: https://www.nobleui.com
+Portfolio: https://themeforest.net/user/nobleui/portfolio
+Contact: nobleui123@gmail.com
+Purchase: https://1.envato.market/nobleui_admin
+License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Pitgrowth is a network-place where technology startups can network with the executive partners to grow their companies.">
+  <meta name="author" content="Pitgrowth">
+  <meta name="keywords"
+    content="Pitgrowth, Partner , Company , bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+  <title>Pitgrowth- Company Dashboard</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- End fonts -->
+
+  <!-- core:css -->
+  <link rel="stylesheet" href="assets/vendors/core/core.css">
+  <!-- endinject -->
+
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css">
+  <!-- End plugin css for this page -->
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+  <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <!-- endinject -->
+
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="assets/css/demo2/style.css">
+  <!-- End layout styles -->
+
+  <!-- TALHA TAKVİM -->
+  <link rel="stylesheet" href="assets/css/demo4/hours.css">
+  <!-- TALHA TAKVİM -->
+
+  <link rel="shortcut icon" href="images/favicon.svg" />
+  <link rel="stylesheet" href="assets/vendors/sweetalert2/sweetalert2.min.css">
+</head>
+
+<body>
+  <div class="main-wrapper">
+
+           <!-- partial:partials/_sidebar.html -->
+		<nav class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+         <img style="height: 20px;" src="images/pg-red.png" alt="">
+      </a>
+        <div class="sidebar-toggler active">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="nav">
+          
+            <li class="nav-item">
+               <a href="index.html" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="box"></i>
+                 <span class="link-title">Home</span>
+               </a>
+             </li>
+
+             <li class="nav-item">
+               <a href="cdashboard.html" class="nav-link" style="color: #6571ff;">
+                 <i class="link-icon" data-feather="calendar"></i>
+                 <span class="link-title">Dashboard</span>
+               </a>
+             </li>
+
+             <li class="nav-item">
+               <a href="workingonit.html" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="inbox"></i>
+                 <span class="link-title">Notification</span>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a onclick="logout()" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="unlock"></i>
+                 <span class="link-title">Log out</span>
+               </a>
+             </li>
+        </ul>
+      </div>
+    </nav>
+
+      <!-- partial --> 
+
+   
+    <div class="page-wrapper">
+      <nav class="navbar">
+				<a href="#" class="sidebar-toggler">
+					<i data-feather="menu"></i>
+				</a>
+               <div class="navbar-content">
+                 
+                  <ul class="navbar-nav">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="notificationDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i data-feather="bell"></i>
+                           <div class="indicator">
+                              <div class="circle"></div>
+                           </div>
+                        </a>
+                        <div class="dropdown-menu p-0" id="notification_container" aria-labelledby="notificationDropdown">
+                           <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+                              <p id="notification_count">6 New Notifications</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="profileDropdown" role="button"
+                           data-bs-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                           <p id='userDrowDown'>test</p>
+                        </a>
+                        <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+                           <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+                              <div class="text-center">
+                                 <p id='userDrowDown' class="tx-16 fw-bolder"></p>
+                                 <p id='emailDropDownInfo' class="tx-12 text-muted">test@gmail.com</p>
+                              </div>
+                           </div>
+                           <ul class="list-unstyled p-1">
+                              <li class="dropdown-item py-2">
+                                 <a href="index.html" class="text-body ms-0">
+                                 <i class="me-2 icon-md" data-feather="user"></i>
+                                 <span>Home</span>
+                                 </a>
+                              </li>
+                              <li id='logOut' class="dropdown-item py-2" onclick="logout()">
+                                 <a class="text-body ms-0">
+                                 <i class="me-2 icon-md" data-feather="log-out"></i>
+                                 <span>Log Out</span>
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+			</nav>
+      <div class="page-content">
+
+        <!-- 1. row -->
+        <div class="row">
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+
+                <h6 class="card-title">Update Profile</h6>
+
+                <form class="forms-sample">
+                  <div class="row mb-3">
+                    <label for="exampleInputName" class="col-sm-3 col-form-label" >Name</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="company-update-name" placeholder="etc george">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="exampleInputSurname" class="col-sm-3 col-form-label" >Company</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="company-update-company-name" placeholder="etc Coloney">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label" >Email</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="company-update-email" autocomplete="off"
+                        placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="exampleInputPassword" class="col-sm-3 col-form-label">Old Password</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" id="company-update-oldpassword" autocomplete="off"
+                        placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">New Password</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" id="company-update-newpassword" autocomplete="off"
+                        placeholder="Password">
+                    </div>
+                  </div>
+
+                  <button type="button" onclick="updateCompany(), showSwal('update')" class="btn btn-primary me-2">Update</button>
+                  <button class="btn btn-secondary">Cancel</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+          
+
+
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+          <div class="table-responsive">
+            <div class="card-body col-md-6 grid-margin ">
+              <h6 class="card-title mb-0">Meeting Time</h6>
+            </div>
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th class="pt-0">#</th>
+                  <th class="pt-0">Company Name</th>
+                  <th class="pt-0">Meeting Date</th>
+                  <th class="pt-0">Meeting Time</th>
+                  <th class="pt-0">Status</th>
+                </tr>
+              </thead>
+              <tbody id='meetings-body'>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <!-- 2. row -->
+
+
+
+
+    
+        <!-- row -->
+
+
+
+
+      </div>
+    </div>
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--USER SCRIPTS-->    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+      <script>
+   {
+       const Container =document.getElementById('notification_container')
+       const BASE_URL=`https://www.pithgrowth.simurgify.com/`
+       if(localStorage.getItem('token_partner') || localStorage.getItem('token_company'))
+       {
+           try {
+               axios.get(`${BASE_URL}api/verify/notification/${localStorage.getItem('company_id')}`,{
+                   headers:{
+                       token:localStorage.getItem('token_partner')?
+                       localStorage.getItem('token_partner'):localStorage.getItem('token_company')
+                   }
+               }).then(response=>{
+                   const Count=document.getElementById('notification_count')
+                   Count.innerHTML=response.data.length===0 ? 'Notifiaction is Empty':`${response.data.length} New Notification`
+                  response.data?.map(data=>{
+                   const NotificationContainer=document.createElement('div')
+                   Container.appendChild(NotificationContainer)
+                   const NotificationHref=document.createElement('a')
+                   NotificationContainer.appendChild(NotificationHref)
+                   NotificationHref.setAttribute('class','dropdown-item d-flex align-items-center py-2')
+                   const NotificationTitleContainer=document.createElement('div')
+                   NotificationHref.appendChild(NotificationTitleContainer)
+                   NotificationTitleContainer.setAttribute('class','wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3')
+                   const NotificationI=document.createElement('i')
+                   NotificationI.setAttribute('class','icon-sm text-white')
+                   NotificationI.setAttribute('data-feather','gift')
+                   NotificationTitleContainer.appendChild(NotificationI)
+                   const NotifactionDescContainer=document.createElement('div')
+                   NotifactionDescContainer.setAttribute('class','flex-grow-1 me-2')
+                   NotificationHref.appendChild(NotifactionDescContainer)
+                   const NotifiactionDescExplanation=document.createElement('p')
+                   const NotifiactionDescTime=document.createElement('p')
+                   NotifiactionDescTime.setAttribute('class','tx-12 text-muted')
+                   NotifactionDescContainer.appendChild(NotifiactionDescExplanation)
+                   NotifactionDescContainer.appendChild(NotifiactionDescTime)
+                   NotifiactionDescExplanation.innerHTML=data.message
+                   NotifiactionDescTime.innerHTML=moment().startOf(data.created_at).fromNow();
+               })
+               })
+          } catch (error) {
+           console.log(error)
+          }
+       }
+   }
+</script>
+    <script>
+      {
+        const UpdateEmail=document.getElementById('company-update-email')
+        const UpdateCompanyName=document.getElementById('company-update-company-name')
+        const UpdateName=document.getElementById('company-update-name')
+        const UpdateNameonNavbar = document.getElementById('userDrowDown')
+        const BASE_URL='https://www.pithgrowth.simurgify.com/'
+        if(localStorage.getItem('token_company'))
+        {
+          try {
+          axios.get(`${BASE_URL}api/verify/company/byid/${localStorage.getItem('company_id')}?token=${localStorage.getItem('token_company')}`)
+          .then(response=>{
+            UpdateEmail.value=response.data.email
+            UpdateName.value=response.data.name
+            UpdateNameonNavbar.innerHTML = response.data.name
+            UpdateCompanyName.value=response.data.company_name
+            localStorage.setItem('company_name', response.data.company_name)
+            getMeets()
+          })
+        } catch (error) {
+          console.log(error)
+        }
+        } else {
+          // bypass return
+          window.location.href='login.html'
+          alert('Please Login First!')
+        }
+      }
+    </script>
+    <script>
+      {
+        function getMeets() {
+          const Container=document.getElementById('meetings-body')
+          const BASE_URL='https://www.pithgrowth.simurgify.com/'
+        try {
+          axios.get(`${BASE_URL}api/verify/meeting/company/${localStorage.getItem('company_id')}?token=${localStorage.getItem('token_company')}`)
+          .then((response)=>{
+            if(response.data.length===0)
+            {
+              const SpanNull=document.createElement('span')
+              SpanNull.setAttribute('style','text-align: center; color:white;')
+              SpanNull.innerText='Meeting Schedule is Empty'
+              Container.appendChild(SpanNull)
+            } else {
+              response.data.map((data,index)=>{
+              const Tr=document.createElement('tr')
+              const TdId=document.createElement('td')
+              const TdCompanyName=document.createElement('td')
+              const TdMeetingDate=document.createElement('td')
+              const TdMeetingTime=document.createElement('td')
+              const TdStatus=document.createElement('td')
+              const StatusBadge=document.createElement('span')
+              const MeetLink=document.createElement('a')
+              const Span=document.createElement('span')
+              Container.appendChild(Tr)
+              Tr.appendChild(TdId)
+              Tr.appendChild(TdCompanyName)
+              Tr.appendChild(TdMeetingDate)
+              Tr.appendChild(TdMeetingTime)
+              Tr.appendChild(TdStatus)
+              TdId.innerText=index+1
+              TdCompanyName.innerText=data.company_name
+              TdMeetingDate.innerText=data.date
+              TdMeetingTime.innerText=data.time
+              if( data.status==='Approved' && data.meet_link!=='undefined') {
+                MeetLink.innerText='Go To Meet Link'
+                MeetLink.setAttribute('href',`${data.meet_link}`)
+                TdStatus.appendChild(MeetLink)
+              } else if (data.status==='Approved' && data.meet_link==='undefined') {
+                MeetLink.innerText='Waiting to meet link'
+                TdStatus.appendChild(MeetLink)
+              } else if(data.status==='Denied') {
+                StatusBadge.innerText='Denied'
+                StatusBadge.setAttribute('class','badge bg-danger')
+                TdStatus.appendChild(StatusBadge)
+              } else if(data.status==='Pending') {
+                StatusBadge.innerText='Pending'
+                StatusBadge.setAttribute('class','badge bg-warning')
+                TdStatus.appendChild(StatusBadge)
+              }
+            })
+            }
+          })  
+        } catch (error) {
+          console.log(error)
+        } 
+        }
+      }
+    </script>
+    <!--Update Company informations-->
+    <script>
+      {
+        const BASE_URL='https://www.pithgrowth.simurgify.com/'
+        const UpdateEmail=document.getElementById('company-update-email')
+        const UpdateCompanyName=document.getElementById('company-update-company-name')
+        const UpdateName=document.getElementById('company-update-name')
+        const UpdateOldPassword=document.getElementById('company-update-oldpassword')
+        const UpdateNewPassword=document.getElementById('company-update-newpassword')
+        function updateCompany() {  
+          try {
+            axios.put(`${BASE_URL}api/verify/company/update/${localStorage.getItem('company_id')}?token=${localStorage.getItem('token_company')}`,{
+              company_name:UpdateCompanyName.value,
+              name:UpdateName.value,
+              email:UpdateEmail.value,
+              old_password:UpdateOldPassword.value,
+              new_password:UpdateNewPassword.value
+            })
+            .then(response=>{
+              alert('Company Updated Successfully')
+            })
+          } catch (error) {
+            alert('We have some trouble please try later')
+            console.log(error)
+          }
+        }
+      }
+    </script>
+    <script>
+      {
+        function logout() {
+          localStorage.clear()
+          sessionStorage.clear()
+          window.location.href='login.html'
+        }
+      }
+    </script>
+
+    <!-- core:js -->
+    <script src="assets/vendors/core/core.js"></script>
+    <!-- endinject -->
+
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+    <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+    <!-- End plugin js for this page -->
+
+    <!-- inject:js -->
+    <script src="assets/vendors/feather-icons/feather.min.js"></script>
+    <script src="assets/js/template.js"></script>
+    <!-- endinject -->
+
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard-dark.js"></script>
+    <!-- End custom js for this page -->
+    <script src="assets/vendors/core/core.js"></script>
+    <script src="assets/vendors/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/js/sweet-alert.js"></script>
+
+    <!-- TALHA TAKVİM -->
+
+    <!-- TALHA TAKVİM -->
+      <script src="assets/vendors/core/core.js"></script>
+      <script src="assets/vendors/core/core.js"></script>
+      <script src="assets/js/sweet-alert.js"></script>
+      <!-- End custom js for this page -->
+      <!-- TALHA TAKVİM -->
+      <!-- core:js -->
+	<script src="./assets/vendors/core/core.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pitgrowth</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./calendar/css/c_styles.css">
+        <link rel="stylesheet" href="./calendar/css/register.css">
+        <link rel="stylesheet" href="assets/vendors/sweetalert2/sweetalert2.min.css">
+    </head>
+
+    <body style="background:#1B1B1B">
+
+        <div class="container">
+            <section class="description-section">
+                <button class="back-btn" onclick="goBack()"><img  class="arrow-icon" src="./calendar/icons/arrow (1).svg" alt="back-arrow"></button>
+                <hgroup>
+                    <h4 id="scheduler">Pitgrowth</h4>
+                    <h2 id="event_register_partner_name">Pricing Review</h2>
+                    <div class="icon-text-div">
+                        <img  src="./calendar/icons/clock.svg" alt="clock-icon">
+                        <h4 id="duration">15 min</h4>
+                    </div><br>
+                    <div>
+                        <img id="selected_partner_logo1" style="margin-top:10px; margin-bottom: 20px; width: 100px; height:100px; border-radius: 50vh;" src=""/>
+                    </div>
+                    <div class="icon-text-div">
+                        <img  src="./calendar/icons/calendar (1).svg" alt="calendar-icon">
+                        <h4 id="event-time-stamp">9:00am - 9:15am, Monday, July 13, 2020</h4>
+                    </div>
+                </hgroup>
+            </section>
+            <div class="divider"></div>
+            <section id="register-section" class="body-section" style="display:flex;justify-content: center;align-items: center;">
+                <div>
+                    <h3>Enter Details</h3>
+                    <label for="details">Detailed Description of Your Needs</label>
+                    <textarea name="details" id="detailsEventRegister" cols="30" rows="10" style="width: 100%;border:1px solid lightgray;"></textarea>
+                    <button id="submit-btn" style="background-color: #e94546; border-color: #e94546" onclick="createMeet(), showSwal('mixin')">Schedule Event</button>
+                </div>
+            </section>
+
+        </div>
+        <script>
+            {
+                const getItem=document.getElementById('event_register_partner_name')
+                getItem.innerHTML=sessionStorage.getItem('event_register_partner_name')
+            }
+        </script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./calendar/script/register.js"></script>
+    <script src="./calendar/script/noFriday.js"></script>
+    <script src="./js/createMeet.js"></script>
+    <script src="assets/vendors/core/core.js"></script>
+    <script src="assets/vendors/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/js/sweet-alert.js"></script>
+    <script>
+        {
+            const imageContainer=document.getElementById('selected_partner_logo1')
+            if(sessionStorage.getItem('logo_partner'))
+            {
+                imageContainer.setAttribute('src',`${sessionStorage.getItem('logo_partner')}`)
+            } else {
+                imageContainer.setAttribute('src','https://www.pithgrowth.simurgify.com/uploads/default.png')
+            }
+        }
+    </script>
+    </body>
+</html>

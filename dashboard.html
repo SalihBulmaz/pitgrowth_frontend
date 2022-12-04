@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!--
+   Template Name: NobleUI - HTML Bootstrap 5 Admin Dashboard Template
+   Author: NobleUI
+   Website: https://www.nobleui.com
+   Portfolio: https://themeforest.net/user/nobleui/portfolio
+   Contact: nobleui123@gmail.com
+   Purchase: https://1.envato.market/nobleui_admin
+   License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
+   -->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="Pitgrowth is a network-place where technology startups can network with the executive partners to grow their companies.">
+      <meta name="author" content="Pitgrowth">
+      <meta name="keywords"
+         content="Pitgrowth, Partner , Company , bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+      <title>Pitgrowth- Partner Dashboard</title>
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+      <!-- End fonts -->
+      <!-- core:css -->
+      <link rel="stylesheet" href="assets/vendors/core/core.css">
+      <link rel="stylesheet" href="./css/numberdash.css">
+
+      <!-- endinject -->
+      <!-- Plugin css for this page -->
+      <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css">
+      <!-- End plugin css for this page -->
+      <!-- inject:css -->
+      <link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+      <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+      <!-- endinject -->
+      <!-- Layout styles -->
+      <link rel="stylesheet" href="assets/css/demo2/style.css">
+      <!-- End layout styles -->
+      <!-- TALHA TAKVİM -->
+      <link rel="stylesheet" href="assets/css/demo4/hours.css">
+      <!-- TALHA TAKVİM -->
+      <link rel="shortcut icon" href="images/favicon.svg" />
+      <link rel="stylesheet" href="assets/vendors/sweetalert2/sweetalert2.min.css">
+      <link rel="stylesheet" href="assets/vendors/flatpickr/flatpickr.min.css">
+      <link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
+      <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
+   </head>
+   <body>
+      <div class="main-wrapper">
+
+       <!-- partial:partials/_sidebar.html -->
+			<nav class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+         <img style="height: 20px;" src="images/pg-red.png" alt="">
+      </a>
+        <div class="sidebar-toggler active">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="nav">
+          
+            <li class="nav-item">
+               <a href="index.html" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="box"></i>
+                 <span class="link-title">Home</span>
+               </a>
+             </li>
+
+             <li class="nav-item">
+               <a href="dashboard.html" class="nav-link" style="color: #6571ff;">
+                 <i class="link-icon" data-feather="calendar"></i>
+                 <span class="link-title">Dashboard</span>
+               </a>
+             </li>
+
+             <li class="nav-item">
+               <a href="workingonit.html" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="inbox"></i>
+                 <span class="link-title">Notification</span>
+               </a>
+             </li>
+             <li class="nav-item" id="logout_btn">
+               <a onclick="" target="_blank" class="nav-link">
+                 <i class="link-icon" data-feather="unlock"></i>
+                 <span class="link-title">Log out</span>
+               </a>
+             </li>
+        </ul>
+      </div>
+    </nav>
+
+         <!-- partial -->  
+      <!-- partial:partials/_navbar.html -->
+      
+      <!-- partial -->
+      <div class="page-wrapper">
+         <nav class="navbar">
+				<a href="#" class="sidebar-toggler">
+					<i data-feather="menu"></i>
+				</a>
+               <div class="navbar-content">
+                 
+                  <ul class="navbar-nav">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="notificationDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <i data-feather="bell"></i>
+                           <div class="indicator">
+                              <div class="circle"></div>
+                           </div>
+                        </a>
+                        <div class="dropdown-menu p-0" id="notification_container" aria-labelledby="notificationDropdown">
+                           <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
+                              <p id="notification_count">6 New Notifications</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" id="profileDropdown" role="button"
+                           data-bs-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                           <p id='userDrowDown'>test</p>
+                        </a>
+                        <div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
+                           <div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
+                              <div class="text-center">
+                                 <p id='userDrowDown' class="tx-16 fw-bolder"></p>
+                                 <p id='emailDropDownInfo' class="tx-12 text-muted">test@gmail.com</p>
+                              </div>
+                           </div>
+                           <ul class="list-unstyled p-1">
+                              <li class="dropdown-item py-2">
+                                 <a href="index.html" class="text-body ms-0">
+                                 <i class="me-2 icon-md" data-feather="user"></i>
+                                 <span>Home</span>
+                                 </a>
+                              </li>
+                              <li class="dropdown-item py-2">
+                                 <a class="text-body ms-0">
+                                 <i class="me-2 icon-md" data-feather="log-out"></i>
+                                 <span>Log Out</span>
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+			</nav>
+         <div class="page-content">
+            <!-- 1. row -->
+            <div class="row">
+               <div class="col-md-6 grid-margin stretch-card">
+                  <div class="card">
+                     <div class="card-body">
+                        <h6 class="card-title mb-0">Available Times</h6>
+                        <div id="hourForm">
+                           <div id="Sunday" class="day"></div>
+                           <div id="Monday" class="day"></div>
+                           <div id="Tuesday" class="day"></div>
+                           <div id="Wednesday" class="day"></div>
+                           <div id="Thursday" class="day"></div>
+                           <div id="Friday" class="day"></div>
+                           <div id="Saturday" class="day"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 grid-margin stretch-card">
+                  <div class="card">
+                     <div class="card-body">
+                        <h6 class="card-title">Edit Profile</h6>
+                        <div class="row mb-3">
+                           <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Logo</label>
+                           <div class="col-sm-9 mb-3" style="text-align: center;">
+                              <div id="profile-container">
+                                 <img id="profileImage" class="circle" src="images/avatar.webp" />
+                              </div>
+                              <label for="imageUpload">
+                                 <img data-feather="camera"/>
+                               </label>
+                              <input id="imageUpload" type="file" name="imageUpload"/>
+                           </div>
+                        </div>
+                        <div class="row mb-3">
+                           <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Username</label>
+                           <div class="col-sm-9">
+                              <input type="text" class="form-control" id="user_name_input" placeholder="Name">
+                           </div>
+                        </div>
+                        <div class="row mb-3">
+                           <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+                           <div class="col-sm-9">
+                              <input type="email" class="form-control" id="user_email_input" autocomplete="off"
+                                 placeholder="Email">
+                           </div>
+                        </div>
+                        <div class="row mb-3">
+                           <label for="exampleInputMobile" class="col-sm-3 col-form-label">Mobile</label>
+                           <div class="col-sm-9">
+                              <input type="number" class="form-control" id="user_phone_input" placeholder="Mobile number">
+                           </div>
+                        </div>
+                        <div class="row mb-3">
+                           <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Old Password</label>
+                           <div class="col-sm-9">
+                              <input type="password" class="form-control" id="user_old_password" autocomplete="off"
+                                 placeholder="Password">
+                           </div>
+                        </div>
+                        <div class="row mb-3">
+                           <label for="exampleInputPassword2" class="col-sm-3 col-form-label">New Password</label>
+                           <div class="col-sm-9">
+                              <input type="password" class="form-control" id="user_new_password" autocomplete="off"
+                                 placeholder="Password">
+                           </div>
+                        </div>
+                        <button id="submit_user_changes" class="btn btn-primary me-2" onclick="showSwal('update')">Update</button>
+                        <button class="btn btn-secondary">Cancel</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+<style>
+   #imageUpload {
+      display: none;
+   }
+   #imageUpload:hover {
+      color: gray;
+   }
+</style>
+            <!-- 2. row -->
+                        <!-- yeni row -->
+                        <div class="row">
+                           <div class="col-12 col-xl-12 grid-margin stretch-card" >
+                              <div class="card" >
+
+                                 <div class="statistic-circles">
+                                    <div class="group-circles">
+                                      <div class="group-circle-item">
+                                        <div class="circle circle-one"></div>
+                                        <div class="circle-description">
+                                          <span class="circle-numbers">$request</span>
+                                          <span class="circle-concept"># of request</span>
+                                        </div>
+                                      </div>
+                                      <div class="group-circle-item">
+                                        <div class="circle circle-two"></div>
+                                        <div class="circle-description">
+                                          <span class="circle-numbers">$approved </span>
+                                          <span class="circle-concept"># of approved</span>
+                                        </div>
+                                      </div>
+                                      <div class="group-circle-item">
+                                        <div class="circle circle-three"></div>
+                                        <div class="circle-description">
+                                          <span class="circle-numbers">$completed</span>
+                                          <span class="circle-concept"># of completed meeting</span>
+                                        </div>
+                                      </div> 
+                                          <div class="group-circle-item">
+                                        <div class="circle circle-three"></div>
+                                        <div class="circle-description">
+                                          <span class="circle-numbers">$declined</span>
+                                          <span class="circle-concept"># of declined</span>
+                                        </div>
+                                      </div> 
+                                    </div>
+                                  </div>
+
+
+                              </div>
+                           </div>
+                        </div>
+                        <!-- row -->
+
+            <!-- 2. row -->
+            <div class="row">
+               <div class="col-12 col-xl-12 grid-margin stretch-card">
+                  <div class="card">
+                     <div class="card-body">
+                        <h6 class="card-title mb-0">Meeting Requests</h6>
+                        <div class="dropdown mb-2">
+
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
+                              <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye"
+                                 class="icon-sm me-2"></i> <span class="">View</span></a>
+                              <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2"
+                                 class="icon-sm me-2"></i> <span class="">Edit</span></a>
+                              <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash"
+                                 class="icon-sm me-2"></i> <span class="">Delete</span></a>
+                              <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer"
+                                 class="icon-sm me-2"></i> <span class="">Print</span></a>
+                              <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download"
+                                 class="icon-sm me-2"></i> <span class="">Download</span></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                           <thead>
+                              <tr>
+                                 <th class="pt-0">#</th>
+                                 <th class="pt-0">Company Name</th>
+                                 <th class="pt-0">Meeting Date</th>
+                                 <th class="pt-0">Meeting Time</th>
+                                 <th class="pt-0">Status</th>
+                                 <th class="pt-0">Approve/Deny</th>
+                                 <th class="pt-0">Details</th>
+                              </tr>
+                           </thead>
+                           <tbody id="meeting_table_body">
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- row -->
+         </div>
+      </div>
+
+
+
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+         {
+            const BASE_URL='https://www.pithgrowth.simurgify.com/'
+            if(sessionStorage.getItem('company') && sessionStorage.getItem('sub_type'))
+            {
+               try {
+                  axios.get(`${BASE_URL}api/verify/partner`)
+               } catch (error) {
+                  
+               }
+            } else {}
+         }
+      </script>
+      <script src="js/pimage.js"></script>
+      <!-- <script src="assets/vendors/core/core.js"></script> -->
+      <!-- endinject -->
+      <!-- Plugin js for this page -->
+      <script src="assets/vendors/flatpickr/flatpickr.min.js"></script>
+      <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
+      <!-- End plugin js for this page -->
+      <!-- inject:js -->
+      <script src="assets/vendors/feather-icons/feather.min.js"></script>
+      <script src="assets/js/template.js"></script>
+      <!-- endinject -->
+      <!-- Custom js for this page -->
+      <script src="assets/js/dashboard-dark.js"></script>
+      <script src="assets/vendors/core/core.js"></script>
+      <script src="assets/vendors/sweetalert2/sweetalert2.min.js"></script>
+      <script src="assets/js/sweet-alert.js"></script>
+      <!-- End custom js for this page -->
+      <!-- TALHA TAKVİM -->
+      <script src="assets/js/hours.js"></script>
+      <!-- TALHA TAKVİM -->
+      <!-- core:js -->
+	<!-- <script src="./assets/vendors/core/core.js"></script> -->
+	<!-- endinject -->
+
+	<!-- Plugin js for this page -->
+  <script src="./assets/vendors/cropperjs/cropper.min.js"></script>
+	<!-- End plugin js for this page -->
+
+	<!-- inject:js -->
+	<script src="./assets/vendors/feather-icons/feather.min.js"></script>
+	<script src="./assets/js/template.js"></script>
+	<!-- endinject -->
+
+	<!-- Custom js for this page -->
+  <script src="./assets/js/cropper.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+      <script>
+   {
+       const Container =document.getElementById('notification_container')
+       const BASE_URL=`https://www.pithgrowth.simurgify.com/`
+       if(localStorage.getItem('token_partner') || localStorage.getItem('token_company'))
+       {
+           try {
+               axios.get(`${BASE_URL}api/verify/notification/${localStorage.getItem('company_id') ? 
+               localStorage.getItem('company_id'):localStorage.getItem('partner_id')}`,{
+                   headers:{
+                       token:localStorage.getItem('token_partner')?
+                       localStorage.getItem('token_partner'):localStorage.getItem('token_company')
+                   }
+               }).then(response=>{
+                   const Count=document.getElementById('notification_count')
+                   Count.innerHTML=response.data.length===0 ? 'Notifiaction is Empty':`${response.data.length} New Notification`
+                  response.data?.map(data=>{
+                   const NotificationContainer=document.createElement('div')
+                   Container.appendChild(NotificationContainer)
+                   const NotificationHref=document.createElement('a')
+                   NotificationContainer.appendChild(NotificationHref)
+                   NotificationHref.setAttribute('class','dropdown-item d-flex align-items-center py-2')
+                   const NotificationTitleContainer=document.createElement('div')
+                   NotificationHref.appendChild(NotificationTitleContainer)
+                   NotificationTitleContainer.setAttribute('class','wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3')
+                   const NotificationI=document.createElement('i')
+                   NotificationI.setAttribute('class','icon-sm text-white')
+                   NotificationI.setAttribute('data-feather','gift')
+                   NotificationTitleContainer.appendChild(NotificationI)
+                   const NotifactionDescContainer=document.createElement('div')
+                   NotifactionDescContainer.setAttribute('class','flex-grow-1 me-2')
+                   NotificationHref.appendChild(NotifactionDescContainer)
+                   const NotifiactionDescExplanation=document.createElement('p')
+                   const NotifiactionDescTime=document.createElement('p')
+                   NotifiactionDescTime.setAttribute('class','tx-12 text-muted')
+                   NotifactionDescContainer.appendChild(NotifiactionDescExplanation)
+                   NotifactionDescContainer.appendChild(NotifiactionDescTime)
+                   NotifiactionDescExplanation.innerHTML=data.message
+                   NotifiactionDescTime.innerHTML=moment().startOf(data.created_at).fromNow();
+               })
+               })
+          } catch (error) {
+           console.log(error)
+          }
+       }
+   }
+</script>
+      <script>
+         {
+           const BASE_URL='https://www.pithgrowth.simurgify.com/'
+           const TableBody=document.getElementById('meeting_table_body')
+          
+           axios.get(`${BASE_URL}api/verify/meeting/partner/${localStorage.getItem('partner_id')}?token=${localStorage.getItem('token_partner')}`).then(response=>{
+            response.data.map((data,index)=>{
+               const CreateTr=document.createElement('tr')
+               const CreateTdIndex=document.createElement('td')
+               const CreateTdCompanyName=document.createElement('td')
+               const CreateTdMeetingDate=document.createElement('td')
+               const CreateTdMeetingTime=document.createElement('td')
+               const CreateTdMeetingStatus=document.createElement('td')
+               const CreateBadgeMeetingStatus=document.createElement('span')
+               const CreateTdMeetingOperations=document.createElement('td')
+               const CreateTdMeetingDetails=document.createElement('td')
+         
+               TableBody.appendChild(CreateTr)
+               CreateTr.appendChild(CreateTdIndex)
+               CreateTr.appendChild(CreateTdCompanyName)
+               CreateTr.appendChild(CreateTdMeetingDate)
+               CreateTr.appendChild(CreateTdMeetingTime)
+               CreateTr.appendChild(CreateTdMeetingStatus)
+               CreateTr.appendChild(CreateTdMeetingOperations)
+               CreateTr.appendChild(CreateTdMeetingDetails)
+               CreateTdMeetingStatus.appendChild(CreateBadgeMeetingStatus)
+               CreateTdIndex.innerHTML=(index+1)
+               CreateTdCompanyName.innerHTML=data.name
+               CreateTdMeetingDate.innerHTML=data.date
+               CreateTdMeetingTime.innerHTML=data.time
+               // CreateTdMeetingDetails.innerHTML=data.details TODO:backend yapilcak
+               if(data.status==='Pending')
+               {
+                 CreateBadgeMeetingStatus.innerHTML='Pending'
+                 CreateBadgeMeetingStatus.setAttribute('class','badge bg-warning')
+                 const CreateApproveButton=document.createElement('button')
+                 const CreateDenyButton=document.createElement('button')
+                 //Pending Click to Approve
+                 CreateApproveButton.addEventListener('click',event=>{
+                   const BASE_URL='https://www.pithgrowth.simurgify.com/'
+              try {
+                 axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{status:'Approved'})
+                 if(data.meet_link==="undefined")
+                 {
+                   CreateApproveButton.remove()
+                   CreateDenyButton.remove()
+                   CreateBadgeMeetingStatus.innerHTML='Approved'
+                   CreateBadgeMeetingStatus.setAttribute('class','badge bg-success')
+                   const CreateMeetingLinkInput=document.createElement('input')
+                   const CreateSendMeetingLinkButton=document.createElement('button')
+                   CreateMeetingLinkInput.setAttribute('type','text')
+                   CreateMeetingLinkInput.setAttribute('placeholder','Upload meeting link')
+                   CreateSendMeetingLinkButton.innerHTML='Send'
+                   CreateSendMeetingLinkButton.setAttribute('class','btn btn-primary submit')
+                   CreateSendMeetingLinkButton.setAttribute('style','margin-left: 5px;')
+                   CreateTdMeetingOperations.appendChild(CreateMeetingLinkInput)
+                   CreateTdMeetingOperations.appendChild(CreateSendMeetingLinkButton)
+
+                   //update meet link
+                  CreateSendMeetingLinkButton.addEventListener('click',event=>{
+                    try {
+                      axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{meet_link:CreateMeetingLinkInput.value}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Approved',
+                           message:'Your Meet Approved'
+                        })
+                      })
+                      CreateMeetingLinkInput.remove()
+                      CreateSendMeetingLinkButton.remove()
+                      const CreateMeetingLink=document.createElement('a')
+                      const DeniedMeetingLink=document.createElement('button')
+                      DeniedMeetingLink.innerHTML='Denied'
+                      DeniedMeetingLink.setAttribute('class','btn btn-error submit')
+                      DeniedMeetingLink.addEventListener('click',event=>{
+                        axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{meet_link:'undefined',status:'Denied'}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Denied',
+                           message:'Your Meet Denied'
+                        })
+                      })
+                      })
+                      CreateMeetingLink.innerHTML='Go to meeting link!'
+                      CreateMeetingLink.setAttribute('href',CreateMeetingLinkInput.value)
+                      CreateTdMeetingOperations.appendChild(CreateMeetingLink)
+                      CreateTdMeetingOperations.appendChild(DeniedMeetingLink)
+                    } catch (error) {
+                      console.log(error)
+                    }
+                  })
+                 }else {
+                   CreateApproveButton.remove()
+                   CreateDenyButton.remove()
+                   showSwal('approved')
+                   CreateBadgeMeetingStatus.innerHTML='Approved'
+                   CreateBadgeMeetingStatus.setAttribute('class','badge bg-success')
+                   const CreateMeetingLink=document.createElement('a')
+                   const ChangeToDenied=document.createElement('button')
+                   CreateMeetingLink.innerHTML='Go to meeting link!'
+                   ChangeToDenied.innerHTML='Meeting Approved'
+                   ChangeToDenied.setAttribute('class','btn btn-error submit')
+                   ChangeToDenied.addEventListener('click',event=>{
+                        axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{meet_link:'undefined',status:'Denied'}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Denied',
+                           message:'Your Meet Denied'
+                        })
+                      })
+                   })
+                   CreateMeetingLink.setAttribute('href',data.meet_link)
+                   CreateTdMeetingOperations.appendChild(CreateMeetingLink)
+                   CreateTdMeetingOperations.appendChild(ChangeToDenied)
+
+                 }
+             } catch (error) {
+               console.log(error)
+             }
+                 })
+                 CreateDenyButton.addEventListener('click',event=>{
+                  try {
+                 const BASE_URL='https://www.pithgrowth.simurgify.com/'
+                  axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{status:'Denied'}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Denied',
+                           message:'Your Meet Denied'
+                        })
+                      })
+                  CreateApproveButton.remove()
+                  CreateDenyButton.remove()
+                  CreateTdMeetingOperations.innerHTML='It is Already Denied!'
+                  CreateBadgeMeetingStatus.innerHTML='Denied'
+                  CreateBadgeMeetingStatus.setAttribute('class','badge bg-danger')
+                  const CreateMeetingLinkInput=document.createElement('input')
+                  const CreateSendMeetingLinkButton=document.createElement('button')
+                  CreateMeetingLinkInput.setAttribute('type','text')
+                  CreateMeetingLinkInput.setAttribute('placeholder','Upload meeting link')
+                  CreateSendMeetingLinkButton.setAttribute('class','btn btn-primary submit')
+                  CreateSendMeetingLinkButton.setAttribute('style','margin-left: 5px;')
+                } catch (error) {
+                 console.log(error)
+               }
+                 })
+                 CreateApproveButton.setAttribute('class','btn btn-primary submit')
+                 CreateApproveButton.setAttribute('id',data._id)
+                 CreateApproveButton.innerHTML='Approve'
+         
+                 CreateDenyButton.setAttribute('class','btn btn-primary submit')
+                 CreateDenyButton.setAttribute('style','background-color: red; border-color: red; margin-left: 5px;')
+                 CreateDenyButton.setAttribute('id',data._id)
+                 CreateDenyButton.innerHTML='Deny'
+         
+                 CreateTdMeetingOperations.appendChild(CreateApproveButton)
+                 CreateTdMeetingOperations.appendChild(CreateDenyButton)
+               } else if(data.status==='Approved')
+               {
+                 if(data.meet_link==="undefined")
+                 {
+                   CreateBadgeMeetingStatus.innerHTML='Approved'
+                   CreateBadgeMeetingStatus.setAttribute('class','badge bg-success')
+                   const CreateMeetingLinkInput=document.createElement('input')
+                   const CreateSendMeetingLinkButton=document.createElement('button')
+                   CreateMeetingLinkInput.setAttribute('type','text')
+                   CreateSendMeetingLinkButton.innerHTML='Send'
+                   CreateMeetingLinkInput.setAttribute('placeholder','Upload meeting link')
+                   CreateSendMeetingLinkButton.setAttribute('class','btn btn-primary submit')
+                   CreateSendMeetingLinkButton.setAttribute('style','margin-left: 5px;')
+         
+                   CreateTdMeetingOperations.appendChild(CreateMeetingLinkInput)
+                   CreateTdMeetingOperations.appendChild(CreateSendMeetingLinkButton)
+                   //update meet link
+                  CreateSendMeetingLinkButton.addEventListener('click',event=>{
+                    try {
+                      axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{meet_link:CreateMeetingLinkInput.value}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Approved',
+                           message:'Your Meet Approved'
+                        })
+                      })
+                      CreateMeetingLinkInput.remove()
+                      CreateSendMeetingLinkButton.remove()
+                      const CreateMeetingLink=document.createElement('a')
+                      CreateMeetingLink.innerHTML='Go to meeting link!'
+                      CreateMeetingLink.setAttribute('href',CreateMeetingLinkInput.value)
+                      CreateTdMeetingOperations.appendChild(CreateMeetingLink)
+                    } catch (error) {
+                      console.log(error)
+                    }
+                  })
+                 }else {
+                   const CreateMeetingLink=document.createElement('a')
+                   CreateBadgeMeetingStatus.innerHTML='Approved'
+                   CreateBadgeMeetingStatus.setAttribute('class','badge bg-success')
+                   CreateMeetingLink.innerHTML='Go to meeting link!'
+                   const ChangeToDenied=document.createElement('button')
+                   ChangeToDenied.innerHTML='Denied'
+                   ChangeToDenied.setAttribute('class','btn btn-danger submit')
+                   ChangeToDenied.setAttribute('style','margin-left: 15px;')
+                   CreateMeetingLink.setAttribute('href',data.meet_link)
+                   CreateTdMeetingOperations.appendChild(CreateMeetingLink)
+                   CreateTdMeetingOperations.appendChild(ChangeToDenied)
+                   ChangeToDenied.addEventListener('click',event=>{
+                        axios.put(`${BASE_URL}api/verify/meeting/${data._id}?token=${localStorage.getItem('token_partner')}`,{meet_link:'undefined',status:'Denied'}).then(()=>{
+                        axios.post(`${BASE_URL}api/verify/notification/?token=${localStorage.getItem('token_partner')}`,{
+                           user_id:data.company_id,
+                           title:'Meeting Denied',
+                           message:'Your Meet Denied'
+                        })
+                      })
+                        CreateBadgeMeetingStatus.innerHTML='Denied'
+                        CreateBadgeMeetingStatus.setAttribute('class','badge bg-danger')
+                        CreateMeetingLink.remove()
+                        ChangeToDenied.remove()
+                        CreateTdMeetingOperations.innerHTML='It is Already Denied!'
+                   })
+                 }
+               }else if(data.status==='Denied')
+               {
+                 CreateTdMeetingOperations.innerHTML='It is Already Denied!'
+                 CreateBadgeMeetingStatus.innerHTML='Denied'
+                 CreateBadgeMeetingStatus.setAttribute('class','badge bg-danger')
+                 const CreateMeetingLinkInput=document.createElement('input')
+                 const CreateSendMeetingLinkButton=document.createElement('button')
+                 CreateMeetingLinkInput.setAttribute('type','text')
+                 CreateMeetingLinkInput.setAttribute('placeholder','Upload meeting link')
+                 CreateSendMeetingLinkButton.setAttribute('class','btn btn-primary submit')
+                 CreateSendMeetingLinkButton.setAttribute('style','margin-left: 5px;')
+               }
+            })
+           })
+         }
+      </script>
+      <script>
+         {
+            const dformData=new FormData()
+            dformData.append('Testi',"123123")
+            console.log(dformData)
+         }
+      </script>
+      <script>
+         {
+            const BASE_URL='https://www.pithgrowth.simurgify.com/'
+            const getImage=document.getElementById('imageUpload')
+            getImage.addEventListener('change',event=>{
+               axios.put(`${BASE_URL}api/verify/partner/${localStorage.getItem('partner_id')}?token=${localStorage.getItem('token_partner')}`,{
+                        logo:getImage.files[0]
+                     },{
+                  headers:{
+                     'Content-Type': 'multipart/form-data'
+                  }
+               })
+            })
+         }
+      </script>
+      <script>
+         {
+           const test=document.getElementById('Monday')
+           const userDropDown=document.getElementById('userDrowDown')
+           const emailDropDownInfo=document.getElementById('emailDropDownInfo')
+           const userNameInput=document.getElementById('user_name_input')
+           const userEmailInput=document.getElementById('user_email_input')
+           const userPhoneInput=document.getElementById('user_phone_input')
+           const PartnerImage=document.getElementById('profileImage')
+           //bypass  
+           if(localStorage.getItem('token_partner')===null)
+           {
+             window.location.href='login.html'
+           }else {
+             const BASE_URL='https://www.pithgrowth.simurgify.com/'
+             const IMAGE_URL='https://www.pithgrowth.simurgify.com/'
+           try {
+             axios.get(`${BASE_URL}api/verify/partner/email/${localStorage.getItem('partner_email')}`,{headers:{
+               'Content-Type': 'application/x-www-form-urlencoded',
+               token:`${localStorage.getItem('token_partner')}`
+             }}).then(response=>{
+             userDropDown.innerHTML = response.data.contact_name
+             emailDropDownInfo.innerHTML = response.data.email
+             userNameInput.value = response.data.contact_name
+             userEmailInput.value=response.data.email
+             userPhoneInput.value = response.data.phone
+             PartnerImage.src=IMAGE_URL+response.data.logo
+             })
+           } catch (error) {
+             console.log(error)
+           }
+         }
+      }
+      </script>
+      <script>
+         {
+           const updateUserButton=document.getElementById('submit_user_changes')
+           const userNameInput=document.getElementById('user_name_input')
+           const userEmailInput=document.getElementById('user_email_input')
+           const userPhoneInput=document.getElementById('user_phone_input')
+           const userOldPassword=document.getElementById('user_old_password')
+           const userNewPassword=document.getElementById('user_new_password')
+           const BASE_URL='https://www.pithgrowth.simurgify.com/'
+           updateUserButton.addEventListener('click',event=>{
+             console.log(localStorage.getItem('token_partner'))
+             try { 
+               axios.put(`${BASE_URL}api/verify/partner/update/${localStorage.getItem('partner_id')}?token=${localStorage.getItem('token_partner')}`,{
+               contact_name:userNameInput.value,
+               phone:userPhoneInput.value,
+               email:userEmailInput.value,
+               old_password:userOldPassword.value,
+               new_password:userNewPassword.value
+             })
+             localStorage.setItem('partner_email',userEmailInput.value)
+             } catch (error) {
+               console.log(error)
+             }
+           })
+         }
+      </script>
+      <script>
+         {
+           const logout = document.getElementById('logout_btn')
+           logout.addEventListener('click',event=>{
+             localStorage.clear()
+             sessionStorage.clear()
+             window.location.href='login.html'
+           })
+         }
+      </script>
+      <!-- core:js -->
+   </body>
+</html>
