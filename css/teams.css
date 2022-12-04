@@ -1,0 +1,16 @@
+.section-teams{
+  padding-top: 8em !important;
+}
+.section-teams .card{
+    margin: 10px;
+    background-color: antiquewhite;
+}
+.section-teams .card-group{
+    width: 98%;
+    margin: auto;
+}
+.section-teams .card-title{
+  color: black;
+  text-align: center;
+  font-size: 24px;
+}

@@ -1,0 +1,89 @@
+.BlogCard{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em;
+}
+#section-home{
+    height:400px !important;
+}
+.blogImg{
+    width: 100%;
+    height: 100%;
+}
+.blogFrame{
+    width: 50%;
+    max-width: 40%;
+    height: 19.0625em;  
+}
+.blogDetails{
+    display:flex;justify-content: center;flex-direction: column;align-items: flex-start;
+    width: 50%;
+    gap: 0.1em;
+}
+.blogDetails h1{
+    font-size: 2.5em;
+    letter-spacing: 0;
+}
+
+.blogOwner{
+    white-space: nowrap;
+}
+.blogOwner > a {
+    text-decoration: none;
+    opacity: 0.7;
+}
+.blogOwner > a:hover{
+    opacity: 1;
+}
+
+.blogRow{
+    display: flex;
+    padding: 0 3em 0 3em;  
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.paginationContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.paginationContainer button{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;
+    color: black;
+    font-family: 'Poppins';
+}
+.paginationButton.active {
+    color: rgb(225, 16, 16);
+    font-size: 2em;
+}
+@media screen and (max-width :1500px) {
+    .blogDetails{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width :1200px) {
+    .BlogCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .blogImg{
+        width: 100%;
+        height: 100%;
+    }
+    .blogFrame{
+        width: 100%;
+        max-width: unset;
+        height: 19.0625em;  
+    }
+    .blogDetails{
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+.caseBox{
+    background-color: white;
+    height: 100%;
+    width: 100%;height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1.7em;
+}
+/* .mix.check1 > .caseBox{
+    border-left: 5px brown solid;
+}
+.mix.check2 > .caseBox{
+    border-left: 5px blue solid;
+}
+.mix.check3 > .caseBox{
+    border-left: 5px grey solid;
+} */
+
+.firmLogo{
+    max-width: 90%;
+    max-height: 150px;
+}
+.caseBox p{
+    text-align: center;
+}
